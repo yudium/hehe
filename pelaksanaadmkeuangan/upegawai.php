@@ -25,7 +25,7 @@
 	
     {
       echo "<script>alert('Data Berhasil Diubah');
-                   document.location.href='pegawai';</script>";
+                   document.location.href='pegawai.php';</script>";
     }
   }else{
     header("Location: ../masuk.php");
