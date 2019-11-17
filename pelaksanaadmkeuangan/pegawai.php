@@ -99,7 +99,7 @@ if(($_SESSION['logske']==true) && ($_SESSION['userske']!="")){
                                     <input type="hidden" name="idpeg" id="idpeg">
                                     <!-- <input class="form-control" name="nama" id="disabledInput" type="text" placeholder="<?php echo strtoupper($data1['username']);?>" disabled> -->
                                     <input type="text" name="namabaru" class="form-control" value="<?php echo ($data1['nama']);?>" name="gfIfyneru">
-									<input type="text" name="namabaru" class="form-control" value="<?php echo ($data1['jabatan']);?>" name="gfIfyneru">
+									<input type="text" name="jabatanbaru" class="form-control" value="<?php echo ($data1['jabatan']);?>" name="gfIfyneru">
 									<input type="number" name="gajibaru" class="form-control" value="<?php echo $data1['gaji']; ?>">
                                     
                                   </div>
