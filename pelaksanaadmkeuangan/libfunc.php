@@ -20,7 +20,7 @@ function headske(){
 	<!-- Custom Theme files -->
 	<link href="../css/style.css" rel="stylesheet" type="text/css" media="all"/>
 	<!--js-->
-	<script src="../js/jquery-2.1.1.min.js"></script> 
+	<script src="../js/jquery.min.js"></script> 
 	<!--icons-css-->
 	<link href="../css/font-awesome.css" rel="stylesheet"> 
 	<!--Google Fonts-->
