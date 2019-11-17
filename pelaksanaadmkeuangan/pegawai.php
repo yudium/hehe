@@ -82,7 +82,7 @@ if(($_SESSION['logske']==true) && ($_SESSION['userske']!="")){
                             <td><center>
 							
                               <!-- <a class="logout" data-toggle="modal" href="#myModala<?php echo $i;?>"><button class="btn btn-primary btn-xs">RESET</button></a> -->
-                              <a class="logout" data-toggle="modal" href="#myModala<?php echo $i;?>"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></a>
+                              <a class="logout" data-toggle="modal" href="#myModala<?php echo $i;?>"><button class="btn btn-primary btn-xs tombol-edit" data-idpeg="<?php echo $data1['id_pegawai'];  ?>"><i class="fa fa-pencil"></i></button></a>
 							  <a href="hpegawai.php?&SDEdwdw=<?php echo base64_encode($data1['id_pegawai']);?>" onClick="return confirm('Apakah Anda Yakin Akan Menghapus Data?')"> <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button></a>
                             </center></td>
                           </tr>
@@ -96,6 +96,7 @@ if(($_SESSION['logske']==true) && ($_SESSION['userske']!="")){
 
                                 <form method="post" action="upegawai.php">
                                   <div class="modal-body">
+                                    <input type="hidden" name="idpeg" id="idpeg">
                                     <!-- <input class="form-control" name="nama" id="disabledInput" type="text" placeholder="<?php echo strtoupper($data1['username']);?>" disabled> -->
                                     <input type="text" name="namabaru" class="form-control" value="<?php echo ($data1['nama']);?>" name="gfIfyneru">
 									<input type="text" name="namabaru" class="form-control" value="<?php echo ($data1['jabatan']);?>" name="gfIfyneru">
@@ -182,6 +183,16 @@ if(($_SESSION['logske']==true) && ($_SESSION['userske']!="")){
         </div>
       </div>
     </div>
+
+    <script>
+    $(document).ready(function(){
+        // kita kirim id pegawai ke <form> milik popup edit
+        $(".tombol-edit").click(function(){
+            let idpeg = $(this).data('idpeg');
+            $("input#idpeg").val(idpeg);
+        });
+    });
+    </script>
     <!--inner block end here-->
     <!--copy rights start here-->
 
