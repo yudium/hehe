@@ -1730,6 +1730,7 @@ p.grid1 {
 }
 .login-page {
     padding: 6.5em 0em;
+    background: #dcdcdc;
 }
 .login-head {
     background: url(../images/login.jpg)no-repeat;
@@ -1738,7 +1739,7 @@ p.grid1 {
 }
 .login-head h1 {
     /*font-size:3em;*/
-     color:#FFF;
+     color:#00aced;
     padding: 1em 0em 0em 0em;
     text-align: center;
     font-family: 'Carrois Gothic', sans-serif;
