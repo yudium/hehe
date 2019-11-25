@@ -54,7 +54,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <h1>CV. Putra Rasmana</h1>
       </div>
       <div class="login-block">
-        <form method="post" action="login" onsubmit="return validate();">
+        <form method="post" action="login.php" onsubmit="return validate();">
           <input type="text" name="username" placeholder="Username" required="" autofocus="" id="username">
           <input type="password" name="password" class="lock" placeholder="Password" id="password">
           <div class="forgot">
