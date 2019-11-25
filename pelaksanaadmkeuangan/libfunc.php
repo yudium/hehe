@@ -66,7 +66,7 @@ function headske(){
 										</a>
 										<ul class="dropdown-menu drp-mnu">
 											<li> <a href="ukatasandi"><i class="fa fa-cog"></i>Ubah Kata Sandi</a> </li>
-											<li> <a href="../logout"><i class="fa fa-sign-out"></i> Logout</a> </li>
+											<li> <a href="../logout.php"><i class="fa fa-sign-out"></i> Logout</a> </li>
 										</ul>
 									</li>
 								</ul>
