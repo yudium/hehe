@@ -49,7 +49,7 @@
             <th style="width:20px;"><center>No</center></th>
             <th><center>Pos Anggaran</center></th>
             <th><center>Realisasi <?php echo $min11; ?></center></th>
-            <th><center>omset <?php echo $min11; ?></center></th>
+            <th><center>Budget client <?php echo $min11; ?></center></th>
             <th><center>Rencana <?php echo $thn1; ?></center></th>
           </tr>
         </thead>
@@ -59,7 +59,7 @@
           $res1=mysqli_query($link,$sql1);
           $thn=date('Y');
           $i=1;
-		  $persentase = array(0.0,0.12,0.2,0.3,0.03,0.08,0.04,0.02,0.01,0.2);
+		  $persentase = array(0.70,0.12,0.2,0.3,0.03,0.08,0.04,0.02,0.01,0.2);
           while($data1=mysqli_fetch_array($res1) and $i < count($persentase)){
             $min2=date('Y', strtotime('-2 year', strtotime($thn)));
             $sql4="SELECT *, SUM(kredit) AS krr FROM kasbesar WHERE tanggal LIKE '%$min2%' AND kd_jenisanggaran='$data1[kd_jenisanggaran]' GROUP BY kd_jenisanggaran";
@@ -76,7 +76,7 @@
             <td><center><?php echo $i;?></center></td>
             <td><center><?php echo $data1['jenisanggaran'];?></center></td>
             <td><center><?php echo "Rp ".number_format($data4['krr']);?></center></td>
-            <td><center><?php echo "Rp ".number_format($laba);?></center></td>
+            <td><center><?php echo "Rp 95,000,000.00 ";?></center></td>
             <td><center><?php echo "Rp ".number_format($posang[$i]);?></center></td> 
 			
           </tr>

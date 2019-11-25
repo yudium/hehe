@@ -19,15 +19,20 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
   <script type="text/javascript">
     function validate(){
       var error="";
-      <?php 
-         var potongan = document.getElementById( "potongan" );
+
+        <?php
+      
+      ?>
+      
+      var potongan = document.getElementById( "potongan" );
       if( potongan.value == "" ){
         error = alert('Lengkapi Form !');
         document.getElementById( "error_para" ).innerHTML = error;
         return false;
+      }else{
+        return true;
       }
-      ?>
-     
+    }
   </script>
   <!--inner block start here-->
   <div class="inner-block">
@@ -44,7 +49,7 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                     <th style="width:20px;"><center>No</center></th>
                     <th><center>Nama</center></th>
                     <th><center>Gaji</center></th>
-                    <th><center>Tunjangan</center></th>
+                    
                     <th><center>Potongan Cuti</center></th>
                   </tr>
                 </thead>
@@ -53,6 +58,11 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                   $sql1="SELECT * FROM pegawai p INNER JOIN gaji g ON p.id_pegawai=g.id_pegawai";
                   $res1=mysqli_query($link,$sql1);
                   $i=1;
+                  while($data1=mysqli_fetch_array($res1)){
+                    //$sql6="SELECT SUM(jumlahtunjangan) AS jumbon FROM tunjangan WHERE id_pegawai='$data1[id_pegawai]' AND tanggal LIKE '%$tahun%'";
+                    //$res6=mysqli_query($link,$sql6);
+                    //$data6=mysqli_fetch_array($res6);
+                    //$sisa1=$data1['gaji']-$data6['jumbon'];
                     ?>
                     <tr>
                       <td><center><?php echo $i;?></center></td>
@@ -88,8 +98,9 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
             $o=1;
             while($data4=mysqli_fetch_array($res4)){
               if($data4['id_pegawai']=='pp1'){
+                $tunjanganpp1=$_POST['tunjanganpp1'];
                 $potonganpp1=$_POST['potonganpp1'];
-                $gaji=$data4['gaji']-$potonganpp1;
+                $gaji=$data4['gaji']+$tunjanganpp1-$potonganpp1;
                 $sql7="SELECT *, CONVERT(SUBSTR(kd_kasbesar,3,9), SIGNED) AS kode FROM kasbesar WHERE tanggal IN (SELECT MAX(tanggal) FROM kasbesar) ORDER BY kd_kasbesar DESC LIMIT 1";
                 $res7=mysqli_query($link,$sql7);
                 $data7=mysqli_fetch_array($res7);
@@ -103,12 +114,16 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                 $sqll="INSERT INTO kasbesar VALUES ('$kode','$tanggal','$keterangan1','0','$gaji','$saldo','RK02','PDP00000')";
                 $ress=mysqli_query($link,$sqll);
 
+                //$sqlll="INSERT INTO tunjangan VALUES('$data4[id_pegawai]','$tgl','$tunjanganpp1')";
+                //$resss=mysqli_query($link,$sqlll);
+
                 $sqll1="INSERT INTO potongan VALUES('$data4[id_pegawai]','$tgl','$potonganpp1')";
                 $ress1=mysqli_query($link,$sqll1);
                 // echo $data4['id_pegawai']." ".$gaji." ".$saldo."<br>";
 
               }
               if($data4['id_pegawai']=='pp2'){
+                //$tunjanganpp2=$_POST['tunjanganpp2'];
                 $potonganpp2=$_POST['potonganpp2'];
                 $gaji=$data4['gaji']-$potonganpp2;
                 $sql7="SELECT *, CONVERT(SUBSTR(kd_kasbesar,3,9), SIGNED) AS kode FROM kasbesar WHERE tanggal IN (SELECT MAX(tanggal) FROM kasbesar) ORDER BY kd_kasbesar DESC LIMIT 1";
@@ -124,13 +139,16 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                 $sqll="INSERT INTO kasbesar VALUES ('$kode','$tanggal','$keterangan1','0','$gaji','$saldo','RK02','PDP00000')";
                 $ress=mysqli_query($link,$sqll);
 
+                //$sqlll="INSERT INTO tunjangan VALUES('$data4[id_pegawai]','$tgl','$tunjanganpp2')";
+                //$resss=mysqli_query($link,$sqlll);
+
                 $sqll1="INSERT INTO potongan VALUES('$data4[id_pegawai]','$tgl','$potonganpp2')";
                 $ress1=mysqli_query($link,$sqll1);
                 // echo $data4['id_pegawai']." ".$gaji." ".$saldo."<br>";
 
               }
               if($data4['id_pegawai']=='pp3'){
-                $tunjanganpp3=$_POST['tunjanganpp3'];
+                
                 $potonganpp3=$_POST['potonganpp3'];
                 $gaji=$data4['gaji']-$potonganpp3;
                 $sql7="SELECT *, CONVERT(SUBSTR(kd_kasbesar,3,9), SIGNED) AS kode FROM kasbesar WHERE tanggal IN (SELECT MAX(tanggal) FROM kasbesar) ORDER BY kd_kasbesar DESC LIMIT 1";
@@ -146,12 +164,15 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                 $sqll="INSERT INTO kasbesar VALUES ('$kode','$tanggal','$keterangan1','0','$gaji','$saldo','RK02','PDP00000')";
                 $ress=mysqli_query($link,$sqll);
 
+                
+
                 $sqll1="INSERT INTO potongan VALUES('$data4[id_pegawai]','$tgl','$potonganpp3')";
                 $ress1=mysqli_query($link,$sqll1);
                 // echo $data4['id_pegawai']." ".$gaji." ".$saldo."<br>";
 
               }
               if($data4['id_pegawai']=='pp4'){
+                
                 $potonganpp4=$_POST['potonganpp4'];
                 $gaji=$data4['gaji']-$potonganpp4;
                 $sql7="SELECT *, CONVERT(SUBSTR(kd_kasbesar,3,9), SIGNED) AS kode FROM kasbesar WHERE tanggal IN (SELECT MAX(tanggal) FROM kasbesar) ORDER BY kd_kasbesar DESC LIMIT 1";
@@ -167,12 +188,15 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                 $sqll="INSERT INTO kasbesar VALUES ('$kode','$tanggal','$keterangan1','0','$gaji','$saldo','RK02','PDP00000')";
                 $ress=mysqli_query($link,$sqll);
 
+                
+
                 $sqll1="INSERT INTO potongan VALUES('$data4[id_pegawai]','$tgl','$potonganpp4')";
                 $ress1=mysqli_query($link,$sqll1);
                 // echo $data4['id_pegawai']." ".$gaji." ".$saldo."<br>";
 
               }
               if($data4['id_pegawai']=='pp5'){
+               
                 $potonganpp5=$_POST['potonganpp5'];
                 $gaji=$data4['gaji']-$potonganpp5;
                 $sql7="SELECT *, CONVERT(SUBSTR(kd_kasbesar,3,9), SIGNED) AS kode FROM kasbesar WHERE tanggal IN (SELECT MAX(tanggal) FROM kasbesar) ORDER BY kd_kasbesar DESC LIMIT 1";
@@ -188,12 +212,14 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                 $sqll="INSERT INTO kasbesar VALUES ('$kode','$tanggal','$keterangan1','0','$gaji','$saldo','RK02','PDP00000')";
                 $ress=mysqli_query($link,$sqll);
 
+              
                 $sqll1="INSERT INTO potongan VALUES('$data4[id_pegawai]','$tgl','$potonganpp5')";
                 $ress1=mysqli_query($link,$sqll1);
                 // echo $data4['id_pegawai']." ".$gaji." ".$saldo."<br>";
 
               }
               if($data4['id_pegawai']=='pp6'){
+                
                 $potonganpp6=$_POST['potonganpp6'];
                 $gaji=$data4['gaji']-$potonganpp6;
                 $sql7="SELECT *, CONVERT(SUBSTR(kd_kasbesar,3,9), SIGNED) AS kode FROM kasbesar WHERE tanggal IN (SELECT MAX(tanggal) FROM kasbesar) ORDER BY kd_kasbesar DESC LIMIT 1";
@@ -209,7 +235,7 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                 $sqll="INSERT INTO kasbesar VALUES ('$kode','$tanggal','$keterangan1','0','$gaji','$saldo','RK02','PDP00000')";
                 $ress=mysqli_query($link,$sqll);
 
-               
+                
                 $sqll1="INSERT INTO potongan VALUES('$data4[id_pegawai]','$tgl','$potonganpp6')";
                 $ress1=mysqli_query($link,$sqll1);
                 // echo $data4['id_pegawai']." ".$gaji." ".$saldo."<br>";
@@ -231,32 +257,13 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                 $sqll="INSERT INTO kasbesar VALUES ('$kode','$tanggal','$keterangan1','0','$gaji','$saldo','RK02','PDP00000')";
                 $ress=mysqli_query($link,$sqll);
 
+
                 $sqll1="INSERT INTO potongan VALUES('$data4[id_pegawai]','$tgl','$potonganpp7')";
                 $ress1=mysqli_query($link,$sqll1);
                 // echo $data4['id_pegawai']." ".$gaji." ".$saldo."<br>";
 
-              }
-              if($data4['id_pegawai']=='pp8'){
-                $potonganpp8=$_POST['potonganpp8'];
-                $gaji=$data4['gaji']-$potonganpp8;
-                $sql7="SELECT *, CONVERT(SUBSTR(kd_kasbesar,3,9), SIGNED) AS kode FROM kasbesar WHERE tanggal IN (SELECT MAX(tanggal) FROM kasbesar) ORDER BY kd_kasbesar DESC LIMIT 1";
-                $res7=mysqli_query($link,$sql7);
-                $data7=mysqli_fetch_array($res7);
-
-                $kode="TD".($data7['kode']+1);
-                $saldo=$data7['saldo']-$gaji;
-                $keterangan1="Gaji ".$data4['nama'];
-                $tanggal=date("Y-m-d H:i:s");
-                $tgl=date("Y-m-d");
-
-                $sqll="INSERT INTO kasbesar VALUES ('$kode','$tanggal','$keterangan1','0','$gaji','$saldo','RK02','PDP00000')";
-                $ress=mysqli_query($link,$sqll);
-
-                $sqll1="INSERT INTO potongan VALUES('$data4[id_pegawai]','$tgl','$potonganpp8')";
-                $ress1=mysqli_query($link,$sqll1);
+              
                 // echo $data4['id_pegawai']." ".$gaji." ".$saldo."<br>";
-
-            
 
               }
             }

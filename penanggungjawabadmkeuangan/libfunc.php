@@ -66,7 +66,9 @@ function headmanke(){
 						<div class="header-left">
 							<div class="logo-name">
 								<a href="index"> 
-									<img id="logo" src="../images/htn.png" alt="Logo"/> </a>
+									<h1>Sistem Informasi Manajemen Keuangan</h1>
+									<h1><marquee> CV. Putra Rasmana</marquee></h1>
+									</a>
 
 								</div>
 
