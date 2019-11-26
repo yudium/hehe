@@ -128,25 +128,25 @@ function headmanke(){
 							</a> </div>		  
 							<div class="menu">
 								<ul id="menu" >
-									<li id="menu-home"><a href="index"><i class="fa fa-home"></i><span>Home</span></a></li>
-									<li><a href="monitoringtransaksi"><i class="fa fa-usd"></i><span>Monitoring Transaksi</span></a></li>
-									<li><a href="pendapatan"><i class="fa fa-usd"></i><span>Pendapatan</span></a></li>
-									<li><a href="#"><i class="fa fa-database"></i><span>Data Gaji</span><span class="fa fa-angle-right" style="float: right"></span></a>
+									<li id="menu-home"><a href="index"><span>Home</span></a></li>
+									<li><a href="monitoringtransaksi"><span>Monitoring Transaksi</span></a></li>
+									<li><a href="pendapatan"><span>Pendapatan</span></a></li>
+									<li><a href="#"><span>Data Gaji</span><span class="fa fa-angle-right" style="float: right"></span></a>
 										<ul>
 											<li><a href="penggajian">Kelola Data Gaji</a></li>
 											<li><a href="lapgaji">Laporan Data Gaji</a></li>		            
 										</ul>
 									</li>
-									<li><a href="#"><i class="fa fa-file"></i><span>Anggaran Biaya Perusahaan</span><span class="fa fa-angle-right" style="float: right"></span></a>
+									<li><a href="#"><span>Anggaran Biaya Perusahaan</span><span class="fa fa-angle-right" style="float: right"></span></a>
 										<ul>
 											<li><a href="monitoring">Monitoring</a></li>
 											<li><a href="rbperusahaan">Rencana Anggaran Biaya Perusahaan</a></li>		            
 										</ul>
 									</li>
-									<li><a href="jenisanggaran"><i class="fa fa-database"></i><span>Kelola Anggaran</span></a></li>
-									<li><a href="jurnalumum"><i class="fa fa-file-text"></i><span>Laporan Jurnal Umum</span></a></li>
-									<li><a href="bukubesar"><i class="fa fa-book"></i><span>Laporan Buku Besar</span></a></li>
-									<li><a href="trugilaba"><i class="fa fa-file-text"></i><span>Laporan Rugi Laba</span></a></li>
+									<li><a href="jenisanggaran"><span>Kelola Anggaran</span></a></li>
+									<li><a href="jurnalumum"><span>Laporan Jurnal Umum</span></a></li>
+									<li><a href="bukubesar"><span>Laporan Buku Besar</span></a></li>
+									<li><a href="trugilaba"><span>Laporan Rugi Laba</span></a></li>
 								</ul>
 							</div>
 						</div>
