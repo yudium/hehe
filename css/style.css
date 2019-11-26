@@ -1270,6 +1270,8 @@ span.malorum-pro {
     color: #5F5D5D;
     text-transform: uppercase;
    font-family: 'Carrois Gothic', sans-serif;
+   text-align: center;
+   margin-bottom: 40px;
 }
 .work-progres {
     box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.15);
