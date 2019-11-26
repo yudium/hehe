@@ -149,7 +149,6 @@ a:hover {
 }
 #menu li ul {
   opacity: 0;
-  height: 0px;
 }
 #menu li a {
     position: relative;
@@ -169,7 +168,7 @@ a:hover {
   background-color: #2b303a;
   color: #ffffff;
 }
-#menu ul li { background-color:#202121; }
+#menu ul li { background-color:#000; }
 #menu ul {
   list-style-type: none;
   margin: 0;
@@ -178,17 +177,18 @@ a:hover {
 #menu li ul {
   position: absolute;
   visibility: hidden;
-  left: 100%;
+  width: 150px;
+  left: 95%;
   top: 20px;
-  background-color: #2b303a;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  background-color: #000;
   opacity: 0;
   transition: opacity 0.1s linear;
-  border-top: 1px solid rgba(69, 74, 84, 0.7);
+  border: 1px solid #d9534f;
 }
 #menu li:hover > ul {
   visibility: visible;
   opacity: 1;
+  background: #000;
 }
 #menu li li ul {
   right: 100%;
