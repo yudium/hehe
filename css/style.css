@@ -129,9 +129,10 @@ a:hover {
   top: 0px;
   left:0px;
   bottom: 0;
-  background-color:#fff;
+  background-color:#000;
   color: #aaabae;
   z-index: 999;
+  border-right: 10px solid #00CCFF;
 }
 #menu {
   list-style: none;
@@ -144,6 +145,7 @@ a:hover {
   margin: 0;
   font-size: 12px;
   padding: 0;
+  margin-bottom: 15px;
 }
 #menu li ul {
   opacity: 0;
@@ -154,10 +156,9 @@ a:hover {
     display: block;
     padding: 13px 20px;
     color: #00CCFF;
-    white-space: nowrap;
     z-index: 2;
     font-size: 1.12em;
-        text-align: center;
+        text-align: left;
     font-family: 'Carrois Gothic', sans-serif;
 }
 #menu li a:hover {

@@ -102,12 +102,12 @@ function headmin(){
 				</a> </div>		  
 				<div class="menu">
 					<ul id="menu" >
-						<li id="menu-home" ><a href="../directure"><i class="fa fa-home"></i><span>Home</span></a></li>
-						<li><a href="kpendapatan"><i class="fa fa-usd"></i><span>Konfirmasi Pendapatan</span></a></li>
-						<li><a href="kanggaranbiaya"><i class="fa fa-usd"></i><span>Konfirmasi Anggaran </span></a></li>
-						<li><a href="persentase"><i class="fa fa-percent"></i><span>Persentase Pos Anggaran </span></a></li>
-						<li><a href="trugilaba"><i class="fa fa-file-text"></i><span>Rugi Laba</span></a></li>
-						<li><a href="lapgaji"><i class="fa fa-file-text"></i><span>Laporan Gaji</span></a></li>
+						<li id="menu-home" ><a href="../directure"><span>Home</span></a></li>
+						<li><a href="kpendapatan"><span>Konfirmasi Pendapatan</span></a></li>
+						<li><a href="kanggaranbiaya"><span>Konfirmasi Anggaran </span></a></li>
+						<li><a href="persentase"><span>Persentase Pos Anggaran </span></a></li>
+						<li><a href="trugilaba"><span>Rugi Laba</span></a></li>
+						<li><a href="lapgaji"><span>Laporan Gaji</span></a></li>
 					</ul>
 				</div>
 			</div>
