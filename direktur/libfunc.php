@@ -103,11 +103,11 @@ function headmin(){
 				<div class="menu">
 					<ul id="menu" >
 						<li id="menu-home" ><a href="../directure"><span>Home</span></a></li>
-						<li><a href="kpendapatan"><span>Konfirmasi Pendapatan</span></a></li>
-						<li><a href="kanggaranbiaya"><span>Konfirmasi Anggaran </span></a></li>
-						<li><a href="persentase"><span>Persentase Pos Anggaran </span></a></li>
-						<li><a href="trugilaba"><span>Rugi Laba</span></a></li>
-						<li><a href="lapgaji"><span>Laporan Gaji</span></a></li>
+						<li><a href="kpendapatan.php"><span>Konfirmasi Pendapatan</span></a></li>
+						<li><a href="kanggaranbiaya.php"><span>Konfirmasi Anggaran </span></a></li>
+						<li><a href="persentase.php"><span>Persentase Pos Anggaran </span></a></li>
+						<li><a href="trugilaba.php"><span>Rugi Laba</span></a></li>
+						<li><a href="lapgaji.php"><span>Laporan Gaji</span></a></li>
 					</ul>
 				</div>
 			</div>
