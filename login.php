@@ -24,7 +24,7 @@
             $_SESSION['usermanke']=$data['username'];
             $_SESSION['idmanke']=$data['id_pengguna'];
             $_SESSION['logmanke']=true;
-            header("Location: pensnggungjawabadmkeuangan/");
+            header("Location: penanggungjawabadmkeuangan/");
         }
     }else{
         galogin();
