@@ -778,8 +778,8 @@ ul.dropdown-menu {
 }
 .profile_details li a i.fa.lnr {
     position: absolute;
-    top: 34%;
-    right: 8%;
+    top: 20%;
+    right: 5%;
     color: #616161;
     font-size: 1.6em;
 }
