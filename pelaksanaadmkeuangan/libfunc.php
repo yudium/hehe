@@ -102,11 +102,11 @@ function headske(){
 				</a> </div>		  
 				<div class="menu">
 					<ul id="menu" >
-						<li id="menu-home" ><a href="index"><i class="fa fa-home"></i><span>Home</span></a></li>
-						<li><a href="pengguna.php"><i class="fa fa-user"></i><span>Pengguna</span></a></li>
-						<li><a href="pegawai.php"><i class="fa fa-male"></i><span>Pegawai</span></a></li>
-						<li><a href="kas.php"><i class="fa fa-arrow-circle-down"></i><span>Penambahan Transaksi</span></a></li>
-						<li><a href="bukubesar.php"><i class="fa fa-file-text"></i><span>Cashflow</span></a></li>
+						<li id="menu-home" ><a href="index"><span>Home</span></a></li>
+						<li><a href="pengguna.php"><span>Pengguna</span></a></li>
+						<li><a href="pegawai.php"><span>Pegawai</span></a></li>
+						<li><a href="kas.php"><span>Penambahan Transaksi</span></a></li>
+						<li><a href="bukubesar.php"><span>Cashflow</span></a></li>
 						</li>
 					</ul>
 				</div>
