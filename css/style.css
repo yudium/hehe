@@ -749,6 +749,9 @@ ul.dropdown-menu {
 }
 .profile_details {
     float: right;
+    background: #f8f8f8;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
 }
 .profile_details_drop .fa.fa-angle-up{
 	display:none;
@@ -794,16 +797,18 @@ ul.dropdown-menu.drp-mnu li {
     padding: 3px 0;
 }
 .user-name p{
-	font-size:1em;
-	color:#00ccff;
+	font-size:12px;
+	color:#00CCFF;
 	line-height:1em;
 	font-weight:700;
 }
 .user-name span {
     font-size: .75em;
-    color: #424f63;
+    /* color: #424f63; */
     font-weight: normal;
     margin-top: .3em;
+    color: #8c8080;
+    text-transform: capitalize;
 }
 .profile_details ul {
     padding: 0px;
