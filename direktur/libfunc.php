@@ -42,7 +42,7 @@ function headmin(){
 					<div class="header-left">
 						<div class="logo-name">
 							<a href="index"> 
-								<img id="logo" src="../images/htn.png" alt="Logo"/> </a>
+								<img id="logo" src="../images/cv.PNG" alt="Logo" width="40" /> </a>
 
 							</div>
 
