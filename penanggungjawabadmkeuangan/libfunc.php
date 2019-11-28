@@ -128,25 +128,25 @@ function headmanke(){
 							</a> </div>		  
 							<div class="menu">
 								<ul id="menu" >
-									<li id="menu-home"><a href="index"><span>Home</span></a></li>
-									<li><a href="monitoringtransaksi"><span>Monitoring Transaksi</span></a></li>
-									<li><a href="pendapatan"><span>Pendapatan</span></a></li>
+									<li id="menu-home"><a href="index.php"><span>Home</span></a></li>
+									<li><a href="monitoringtransaksi.php"><span>Monitoring Transaksi</span></a></li>
+									<li><a href="pendapatan.php"><span>Pendapatan</span></a></li>
 									<li><a href="#"><span>Data Gaji</span><span class="fa fa-angle-right" style="float: right"></span></a>
 										<ul>
-											<li><a href="penggajian">Kelola Data Gaji</a></li>
-											<li><a href="lapgaji">Laporan Data Gaji</a></li>		            
+											<li><a href="penggajian.php">Kelola Data Gaji</a></li>
+											<li><a href="lapgaji.php">Laporan Data Gaji</a></li>		            
 										</ul>
 									</li>
 									<li><a href="#"><span>Anggaran Biaya Perusahaan</span><span class="fa fa-angle-right" style="float: right"></span></a>
 										<ul>
-											<li><a href="monitoring">Monitoring</a></li>
-											<li><a href="rbperusahaan">Rencana Anggaran Biaya Perusahaan</a></li>		            
+											<li><a href="tanggaran.php">Tambah Rencana Anggaran Perusahaan</a></li>
+											<li><a href="rbperusahaan.php">Rencana Anggaran Biaya Perusahaan</a></li>		            
 										</ul>
 									</li>
-									<li><a href="jenisanggaran"><span>Kelola Anggaran</span></a></li>
-									<li><a href="jurnalumum"><span>Laporan Jurnal Umum</span></a></li>
-									<li><a href="bukubesar"><span>Laporan Buku Besar</span></a></li>
-									<li><a href="trugilaba"><span>Laporan Rugi Laba</span></a></li>
+									<li><a href="jenisanggaran.php"><span>Kelola Anggaran</span></a></li>
+									<li><a href="jurnalumum.php"><span>Laporan Jurnal Umum</span></a></li>
+									<li><a href="bukubesar.php"><span>Laporan Buku Besar</span></a></li>
+									<li><a href="trugilaba.php"><span>Laporan Rugi Laba</span></a></li>
 								</ul>
 							</div>
 						</div>
