@@ -81,7 +81,7 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                       </thead>
                       <tbody>
                         <?php
-                        $sql1="SELECT * FROM anggaranperusahaan ap INNER JOIN jenisanggaran a ON kd_jenisanggaran=a.kd_jenisanggaran";
+                        $sql1="SELECT * FROM anggaranperusahaan ap INNER JOIN jenisanggaran a ON ap.kd_jenisanggaran=a.kd_jenisanggaran";
                         $res1=mysqli_query($link,$sql1);
                         $i=1;
                         while($data1=mysqli_fetch_array($res1)){
@@ -90,7 +90,7 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                             <tr>
                             <td><center><?php echo $i;?></center></td>
                             <td><center><?php echo strtoupper($data1['jenisanggaran']);?></center></td>
-                            <td><center><?php ?></center></td>
+                            <td><center><?php echo $data1['keterangan'] ?></center></td>
                             <td><center>
                               <?php echo "Rp ".strtoupper(number_format($data1['jumlahanggaran']));?>
                             </center></td>
