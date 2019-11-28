@@ -11,7 +11,7 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
   $sql3="SELECT * FROM pengguna WHERE id_pengguna='$iduser'";
   $res3=mysqli_query($link,$sql3);
   $data3=mysqli_fetch_array($res3);
-  headmanke();
+  headmin();
   ?>
   <script type="text/javascript">
     function validate(){
@@ -172,7 +172,7 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
 </div>
 </div>
 <?php
-sidemanke();
+sidemin();
 }else{
   header("Location: ../masuk.php");
 }

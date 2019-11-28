@@ -30,13 +30,14 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
     <div class="table-agile-info">
       <div class="panel panel-default">
         <div class="chit-chat-heading">
-          Data Jenis Anggaran
+          Anggaran CV. Putra Rasmana
         </div>
         <br>
         <div class="horizontal-tab">
           <ul class="nav nav-tabs">
             <li class="active"><a href="#tab1" data-toggle="tab" aria-expanded="true">Data Jenis Anggaran</a></li>
             <li class=""><a href="#tab2" data-toggle="tab" aria-expanded="false">Tambah Data Jenis Anggaran</a></li>
+			
           </ul>
           <div class="tab-content">
             <div class="tab-pane active" id="tab1">
@@ -86,6 +87,7 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                               </div>
                             </div>
                           </div>
+						  
                           <?php
                           $i++;
                         }
@@ -113,7 +115,9 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                             <input type="reset" class="btn btn-default" value="Reset">
                           </div>
                         </div>
-                      </form>
+						
+					</form>	
+			
 
                       <?php
                       if (isset($_POST["submit"])){

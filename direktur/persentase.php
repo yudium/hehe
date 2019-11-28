@@ -52,7 +52,7 @@ if(($_SESSION['logadm']==true) && ($_SESSION['useradm']!="")){
 							$res1=mysqli_query($link,$sql1);
 							$i=1;
 							while($data1=mysqli_fetch_array($res1)){
-								$pers=$data1['jumlahanggaranperusahaan']/$laba*100;
+								$pers=$data1['jumlahanggaranperusahaan']/584305000 * 100;
 								$ar[$i]=$data1['jumlahanggaranperusahaan'];
 								$ar1[$i]=$pers;
 								?>

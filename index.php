@@ -8,6 +8,8 @@
     header("Location: penanggungjawabadmkeuangan/");
   }else if(($_SESSION['logmanke']==true) && ($_SESSION['idmanke']!="")){
     header("Location: pelaksanaadmkeuangan/");
+  }else if(($_SESSION['logcv']==true) && ($_SESSION['idscv']!="")){
+    header("Location: admincv/");
   }else{
     login();
   }

@@ -1,6 +1,6 @@
 <?php
-function headske(){
-	$iduser=$_SESSION['idske'];
+function headcv(){
+	$iduser=$_SESSION['idmcv'];
 	$link=koneksidb();
 	$sql="SELECT * FROM pengguna pg INNER JOIN pegawai p ON pg.id_pegawai=p.id_pegawai WHERE id_pengguna='$iduser'";
 	$res=mysqli_query($link,$sql);
@@ -43,7 +43,7 @@ function headske(){
 						<div class="logo-name">
 							<a href="index"> 
 								<h1>Sistem Informasi Manajemen Keuangan</h1>
-									<h1><marquee> CV. Putra Rasmana</marquee></h1></a>
+									<h1> CV. Putra Rasmana</h1></a>
 
 							</div>
 
@@ -95,7 +95,7 @@ function headske(){
 					<!-- /script-for sticky-nav -->
 			<?php
 		}
-		function sideske(){
+		function sidecv(){
 			?>
 			<div class="sidebar-menu">
 				<div class="logo"> <a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="#"> <span id="logo" ></span> 
@@ -106,8 +106,7 @@ function headske(){
 						<li id="menu-home" ><a href="index"><span>Home</span></a></li>
 						<li><a href="pengguna.php"><span>Pengguna</span></a></li>
 						<li><a href="pegawai.php"><span>Pegawai</span></a></li>
-						<li><a href="kas.php"><span>Penambahan Transaksi</span></a></li>
-						<li><a href="bukubesar.php"><span>Cashflow</span></a></li>
+						
 						</li>
 					</ul>
 				</div>
@@ -144,8 +143,8 @@ function headske(){
 	</html>                     
 			<?php
 		}
-		function mainskeu(){
-			headske();
+		function maincv(){
+			headcv();
 			$link=koneksidb();
 	?>
 	<!--inner block start here-->
@@ -153,72 +152,81 @@ function headske(){
 		<div class="table-agile-info">
 			<div class="panel panel-default">
         <div class="chit-chat-heading">
-          Anggaran Biaya Tahun 2018
-        </div>
-        <br>
-			<div class="">
-				<?php
-					$sql1="SELECT *, SUM(jumlahpendapatan) AS total, SUBSTR(tanggal,1,4) AS tahun FROM pendapatan WHERE kd_pendapatan LIKE '%PDP%' AND kd_pendapatan!='PDP00000' AND SUBSTR(tanggal,1,4)!='2018' GROUP BY SUBSTR(tanggal,1,4)";
-					$res1=mysqli_query($link,$sql1);
-					$data1=mysqli_fetch_array($res1);  
-		  
-					$sql7="SELECT SUM(kredit) AS total FROM kasbesar k INNER JOIN jenisanggaran j ON k.kd_jenisanggaran=j.kd_jenisanggaran WHERE tanggal LIKE '%$data1[tahun]%' AND k.kd_jenisanggaran!='RK04' GROUP BY SUBSTR(k.kd_jenisanggaran,1,2)";
-					$res7=mysqli_query($link,$sql7);
-					$data7=mysqli_fetch_array($res7);
+        Pegawai
+        </div>   
+        <br>         
+        <div class="horizontal-tab">
+          <ul class="nav nav-tabs">
+        
+            
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="tab1">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th style="width:20px;"><center>No</center></th>
+                          <th><center>Nama</center></th>
+                          <th><center>Jabatan</center></th>
+                          <th><center>Gaji Pokok</center></th>
+                       
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php
+                        $sql1="SELECT * FROM pegawai p INNER JOIN gaji g ON p.id_pegawai=g.id_pegawai";
+                        $res1=mysqli_query($link,$sql1);
+                        $i=1;
+                        while($data1=mysqli_fetch_array($res1)){
+                          ?>
+                          <tr>
+                            <td><center><?php echo $i;?></center></td>
+                            <td><center><?php echo strtoupper($data1['nama']);?></center></td>
+                            <td><center><?php echo strtoupper($data1['jabatan']);?></center></td>
+                            <td><center>
+                              <?php echo "Rp ".strtoupper(number_format($data1['gaji']));?>
+                            </center></td>
+                            <td><center>
+							
+                               </center></td>
+                          </tr>
+                          <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModala<?php echo $i;?>" class="modal fade">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                  <h4 class="modal-title"><center>Ubah Data pegawai - <?php echo strtoupper($data1['nama']);?></center></h4>
+                                </div>
 
-					$sql4="SELECT SUM(kredit) AS pajak, jenisanggaran FROM kasbesar k INNER JOIN jenisanggaran j ON k.kd_jenisanggaran=j.kd_jenisanggaran WHERE tanggal LIKE '%$data1[tahun]%' AND k.kd_jenisanggaran!='RK13' GROUP BY k.kd_jenisanggaran";
-					$res4=mysqli_query($link,$sql4);
-					$data4=mysqli_fetch_array($res4);
-
-					$laba=$data1['total']-$data7['total']-$data4['pajak'];
-				?>
-					<table class="table table-hover">
-						<thead>
-							<tr>
-								<th style="width:20px;"><center>No</center></th>
-								<th><center>Pos Anggaran</center></th>
-								<th><center>Rencana Pos Anggaran</center></th>
-								<th><center>Pendapatan</center></th>
-								<th><center>Persentase</center></th>
-							</tr>
-						</thead>
-						<tbody>
-						<?php
-							$sql1="SELECT * FROM anggaranperusahaan p INNER JOIN detailanggaran d ON p.kd_anggaranperusahaan=d.kd_anggaranperusahaan INNER JOIN jenisanggaran j ON d.kd_jenisanggaran=j.kd_jenisanggaran WHERE p.kd_anggaranperusahaan LIKE '%2018%'";
-							$res1=mysqli_query($link,$sql1);
-							$i=1;
-							while($data1=mysqli_fetch_array($res1)){
-								$pers=$data1['jumlahanggaranperusahaan']/$laba*100;
-								$ar[$i]=$data1['jumlahanggaranperusahaan'];
-								$ar1[$i]=$pers;
-								?>
-								<tr>
-									<td><center><?php echo $i;?></center></td>
-									<td><center><?php echo strtoupper($data1['jenisanggaran']);?></center></td>
-									<td><center><?php echo "Rp ".strtoupper(number_format($data1['jumlahanggaranperusahaan']));?></center></td>
-									<td><center><?php echo "Rp ".strtoupper(number_format($laba));?></center></td>
-									<td><center><?php echo round($pers,2)." %"; ?></center></td>
-								</tr>
-									<?php
-									$i++;
-								}
-								$totalbeban=array_sum($ar);
-								$totalpers=array_sum($ar1);
-								$pkas=100-$totalpers;
-							$kas=($pkas/100)*$totalbeban;
-							?>
-							<tr>
-								<td colspan="2"><center>TOTAL</center></td>
-								<td><center><?php echo "Rp ".strtoupper(number_format($totalbeban));?></center></td>
-								<td><center><?php echo "Rp ".strtoupper(number_format($laba));?></center></td>
-								<td><center><?php echo round($totalpers,2)." %"; ?></center></td>
-							</tr>
-							<tr>
-								<td colspan="2"><center></center></td>
-								<td><center><?php /*echo "Rp ".strtoupper(number_format($kas));?></center></td>
-								<td><center><?php echo "Rp ".strtoupper(number_format($laba));?></center></td>
-								<td><center><?php echo round($pkas,2)." %"; */?></center></td>
-							</tr>
+                                <form method="post" action="upegawai.php">
+                                  <div class="modal-body">
+                                    <input type="hidden" name="idpeg" id="idpeg">
+                                    <!-- <input class="form-control" name="nama" id="disabledInput" type="text" placeholder="<?php echo strtoupper($data1['username']);?>" disabled> -->
+                                    <input type="text" name="namabaru" class="form-control" value="<?php echo ($data1['nama']);?>" name="gfIfyneru">
+									<input type="text" name="jabatanbaru" class="form-control" value="<?php echo ($data1['jabatan']);?>" name="gfIfyneru">
+									<input type="number" name="gajibaru" class="form-control" value="<?php echo $data1['gaji']; ?>">
+                                    
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Keluar</button>
+                                    <button class="btn btn-theme" type="submit">Simpan</button>
+                                  </div>     
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                          <?php
+                          $i++;
+                        }
+                        ?>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
 							</tbody>
 						</table>
 					</center>
@@ -235,6 +243,6 @@ function headske(){
 </div>
 </div>
 <?php
-			sideske();
+sidecv();
 }
 ?>

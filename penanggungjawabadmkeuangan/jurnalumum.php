@@ -134,129 +134,60 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
           $res10=mysqli_query($link,$sql10);
           $data10=mysqli_fetch_array($res10);
          ?>
-        <tr>
-          <td>Salary Staff</td>
-		  <td>&nbsp&nbsp</td>
-          <td><?php echo "Rp ".number_format($data1['gaji']); ?></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Kas</td>
-		  <td>&nbsp&nbsp</td>
-		  <td>&nbsp&nbsp</td>
-          <td></td>
-          <td><?php echo "Rp ".number_format($data1['gaji']); ?></td>
-        </tr>
-		<tr>
-          <td>project expenditure</td>
+		 <tr>
+          <td>Beban Pelatihan</td>
 		  <td>&nbsp&nbsp</td>
           <td><?php echo "Rp ".number_format($data2['project']); ?></td>
           <td></td>
         </tr>
         <tr>
-          <td>project income</td>
+          <td>Budget Client + Kas</td>
 		  <td>&nbsp&nbsp</td>
 		  <td>&nbsp&nbsp</td>
           <td></td>
           <td><?php echo "Rp ".number_format($data2['project']); ?></td>
         </tr>
+        <tr>
+          <td>Beban Penggajian</td>
+		  <td>&nbsp&nbsp</td>
+          <td><?php echo "Rp ".number_format($data1['gaji']); ?></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Budget Client + Kas</td>
+		  <td>&nbsp&nbsp</td>
+		  <td>&nbsp&nbsp</td>
+          <td></td>
+          <td><?php echo "Rp ".number_format($data1['gaji']); ?></td>
+        </tr>
+		
 		<tr>
-          <td>industrial supply expenditure</td>
+          <td>Beban Perusahaan</td>
 		  <td>&nbsp&nbsp</td>
           <td><?php echo "Rp ".number_format($data3['industri']); ?></td>
           <td></td>
         </tr>
         <tr>
-          <td>industrial supply income</td>
+          <td>Budget Client + Kas</td>
 		  <td>&nbsp&nbsp</td>
 		  <td>&nbsp&nbsp</td>
           <td></td>
           <td><?php echo "Rp ".number_format($data3['industri']); ?></td>
         </tr>
 		<tr>
-          <td>training expenditure</td>
+          <td>Beban Lainnya</td>
 		  <td>&nbsp&nbsp</td>
           <td><?php echo "Rp ".number_format($data4['training']); ?></td>
           <td></td>
         </tr>
         <tr>
-          <td>training income</td>
+          <td>Budget Client + Kas</td>
 		  <td>&nbsp&nbsp</td>
 		  <td>&nbsp&nbsp</td>
           <td></td>
           <td><?php echo "Rp ".number_format($data4['training']); ?></td>
         </tr>
-		<tr>
-          <td>transport and marketing expenditure</td>
-		  <td>&nbsp&nbsp</td>
-          <td><?php echo "Rp ".number_format($data5['transport']); ?></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Kas</td>
-		  <td>&nbsp&nbsp</td>
-		  <td>&nbsp&nbsp</td>
-          <td></td>
-          <td><?php echo "Rp ".number_format($data5['transport']); ?></td>
-        </tr>
-		<tr>
-          <td>office and equipment rent</td>
-		  <td>&nbsp&nbsp</td>
-          <td><?php echo "Rp ".number_format($data6['office']); ?></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Kas</td>
-		  <td>&nbsp&nbsp</td>
-		  <td>&nbsp&nbsp</td>
-          <td></td>
-          <td><?php echo "Rp ".number_format($data6['office']); ?></td>
-        </tr>
-		<tr>
-          <td>equipment expenditure</td>
-		  <td>&nbsp&nbsp</td>
-          <td><?php echo "Rp ".number_format($data7['equipment']); ?></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Kas</td>
-		  <td>&nbsp&nbsp</td>
-		  <td>&nbsp&nbsp</td>
-          <td></td>
-          <td><?php echo "Rp ".number_format($data7['equipment']); ?></td>
-        </tr>
-		<tr>
-          <td>utility and maintenance expenditure</td>
-		  <td>&nbsp&nbsp</td>
-          <td><?php echo "Rp ".number_format($data8['utility']); ?></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Kas</td>
-		  <td>&nbsp&nbsp</td>
-		  <td>&nbsp&nbsp</td>
-          <td></td>
-          <td><?php echo "Rp ".number_format($data8['utility']); ?></td>
-        </tr>
-		<tr>
-          <td>conversion etc</td>
-		  <td>&nbsp&nbsp</td>
-          <td><?php echo "Rp ".number_format($data9['conversi']); ?></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Kas</td>
-		  <td>&nbsp&nbsp</td>
-		  <td>&nbsp&nbsp</td>
-          <td></td>
-          <td><?php echo "Rp ".number_format($data9['conversi']); ?></td>
-        </tr>
-		<tr>
-			<td>&nbsp&nbsp</td>
-			<td>&nbsp&nbsp</td>
-			<td>&nbsp&nbsp</td>
-			<td>&nbsp&nbsp</td>
-			<td>&nbsp&nbsp</td>
+		
 		</tr>
 		<tr>
           <td align="center">Jumlah</td>

@@ -82,7 +82,7 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
         </tr>
           <tr>
             <th style="width:20px;"><center>No</center></th>
-            <th><center>Nama</center></th>
+            <th><center>Keterangan</center></th>
             <th><center>Gaji Pokok</center></th>
             <th><center>Potongan</center></th>
             <th><center>Jumlah</center></th>
@@ -91,14 +91,16 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
         <tbody>
           <?php
           $i=1;
-          $sql4="SELECT * FROM pegawai p INNER JOIN gaji g ON p.id_pegawai=g.id_pegawai INNER JOIN potongan k ON p.id_pegawai=k.id_pegawai WHERE b.tanggal LIKE '%$tgl%' AND k.tanggal LIKE '%$tgl%'";
+          $sql4="SELECT * FROM pegawai p INNER JOIN gaji g " .
+				"ON p.id_pegawai=g.id_pegawai INNER JOIN potongan k " .
+				"ON p.id_pegawai=k.id_pegawai " .
+				"WHERE k.tanggal LIKE '%$tgl%'";
           $res4=mysqli_query($link,$sql4);
-		$ss=mysqli_num_rows($res4);
+          $ss=mysqli_num_rows($res4);
           if($ss > 0){
           while($data4=mysqli_fetch_array($res4)){
             $ket[$i]=$data4['nama'];
             $gaj[$i]=$data4['gaji'];
-            
             $kas[$i]=$data4['jumlahpotongan'];
             $kre[$i]=$data4['gaji']-$data4['jumlahpotongan'];
             $i++;
@@ -111,7 +113,6 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
             <td><center><?php echo $j;?></center></td>
             <td><center><?php echo $ket[$j];?></center></td>
             <td><center><?php echo "Rp ".number_format($gaj[$j]);?></center></td>
-            
             <td><center><?php echo "Rp ".number_format($kas[$j]);?></center></td>
             <td><center><?php echo "Rp ".number_format($kre[$j]);?></center></td>
           </tr>
@@ -121,7 +122,7 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
         </tbody>
       </table>
       <hr>
-      <center>
+      <center><a target ="_blank" href ="export.php"> <label><strong>Download&nbsp <i class="fa fa-cloud-download" aria-hidden="true"></i></a>
             <?php
           }else{
             ?>

@@ -23,7 +23,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
-<script src="js/jquery-2.1.1.min.js"></script> 
+<script src="jss/jquery-2.1.1.min.js"></script> 
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <link href='//fonts.googleapis.com/css?family=Carrois+Gothic' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Work+Sans:400,500,600' rel='stylesheet' type='text/css'>
@@ -72,8 +72,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="copyrights">
    <p><a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
 </div>  
-<script src="js/scripts.js"></script>
-<script src="js/bootstrap.js"> </script>
+<script src="jss/scripts.js"></script>
+<script src="jss/bootstrap.js"> </script>
 </body>
 </html>
 <?php
@@ -133,8 +133,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="copyrights">
    <p><a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
 </div>  
-<script src="js/scripts.js"></script>
-<script src="js/bootstrap.js"> </script>
+<script src="jss/scripts.js"></script>
+<script src="jss/bootstrap.js"> </script>
 </body>
 </html>
 <?php

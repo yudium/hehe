@@ -68,7 +68,7 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                       <script>
                         var barChartData = {
                           
-                          labels : ["Project Expenditure","Salary Staff","Industrial Supply ","Training Expenditure","Transport and Marketing","Office and Equipment","Equipment Expenditure","Utility and Maintenance","Conversion etc"],
+                          labels : ["Beban Pelatihan","Beban Penggajian","beban Perusahaan ","Beban Lainnya"],
                           // <?php
                           //   $sql5="SELECT * FROM jenisrekap ORDER BY kd_jenisrekap";
                           //   $res5=mysqli_query($link,$sql5);

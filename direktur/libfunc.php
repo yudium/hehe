@@ -42,8 +42,9 @@ function headmin(){
 					<div class="header-left">
 						<div class="logo-name">
 							<a href="index"> 
-								<img id="logo" src="../images/cv.PNG" alt="Logo" width="40" /> </a>
-
+								<h1>Sistem Informasi Manajemen Keuangan</h1>
+									<h1><marquee> CV. Putra Rasmana</marquee></h1>
+									</a>
 							</div>
 
 							<div class="clearfix"> </div>
@@ -102,7 +103,8 @@ function headmin(){
 				</a> </div>		  
 				<div class="menu">
 					<ul id="menu" >
-						<li id="menu-home" ><a href="../directure"><span>Home</span></a></li>
+						<li id="menu-home" ><a href="../direktur"><span>Home</span></a></li>
+						<li><a href="monitoringtransaksi.php"><span>Monitoring Transaksi</span></a></li>
 						<li><a href="kpendapatan.php"><span>Konfirmasi Pendapatan</span></a></li>
 						<li><a href="kanggaranbiaya.php"><span>Konfirmasi Anggaran </span></a></li>
 						<li><a href="persentase.php"><span>Persentase Pos Anggaran </span></a></li>
@@ -177,7 +179,7 @@ function headmin(){
 								<th style="width:20px;"><center>No</center></th>
 								<th><center>Pos Anggaran</center></th>
 								<th><center>Rencana Pos Anggaran</center></th>
-								<th><center>OmSet 2017</center></th>
+								<th><center>Pendapatan 2017</center></th>
 								<th><center>Persentase</center></th>
 							</tr>
 						</thead>
@@ -187,7 +189,7 @@ function headmin(){
 							$res1=mysqli_query($link,$sql1);
 							$i=1;
 							while($data1=mysqli_fetch_array($res1)){
-								$pers=$data1['jumlahanggaranperusahaan']/$laba*100;
+								$pers=$data1['jumlahanggaranperusahaan']/584305000 * 100;
 								$ar[$i]=$data1['jumlahanggaranperusahaan'];
 								$ar1[$i]=$pers;
 								?>

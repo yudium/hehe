@@ -216,7 +216,7 @@ function mainmanke(){
 								<th style="width:20px;"><center>No</center></th>
 								<th><center>Pos Anggaran</center></th>
 								<th><center>Rencana Pos Anggaran</center></th>
-								<th><center>Omset 2017</center></th>
+								<th><center>Pendapatan 2017</center></th>
 								<th><center>Persentase</center></th>
 							</tr>
 						</thead>
@@ -226,7 +226,7 @@ function mainmanke(){
 							$res1=mysqli_query($link,$sql1);
 							$i=1;
 							while($data1=mysqli_fetch_array($res1)){
-								$pers=$data1['jumlahanggaranperusahaan']/$laba*100;
+								$pers=$data1['jumlahanggaranperusahaan']/584305000 * 100;
 								$ar[$i]=$data1['jumlahanggaranperusahaan'];
 								$ar1[$i]=$pers;
 								?>

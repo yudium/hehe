@@ -25,7 +25,12 @@
             $_SESSION['idmanke']=$data['id_pengguna'];
             $_SESSION['logmanke']=true;
             header("Location: penanggungjawabadmkeuangan/");
-        }
+        }else if($level=="admin"){
+            $_SESSION['usercv']=$data['username'];
+            $_SESSION['idmcv']=$data['id_pengguna'];
+            $_SESSION['logcv']=true;
+            header("Location: admincv/");
+		}
     }else{
         galogin();
     }
