@@ -119,9 +119,15 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                     <div class="panel-body">
                       <form class="form-horizontal bucket-form" method="post" action="" onsubmit="return validate();">
                         <div class="form-group">
+                          <label class="col-sm-3  control-label">Kode Anggaran Perusahaan</label>
+                          <div class="col-sm-6">
+                            <input class="form-control" id="kd_anggaranperusahaan" type="text" name="kd_anggaranperusahaan" value="<?php echo 'PSA'.date('Y') ?>" readonly>
+                          </div>
+                        </div>
+                        <div class="form-group">
                           <label class="col-sm-3 control-label">Pos Anggaran</label>
                           <div class="col-sm-6">
-                            <select class="form-control m-bot15" name="pegawai" id="pegawai">
+                            <select class="form-control m-bot15" name="kd_jenisanggaran" id="kd_jenisanggaran">
                               <option value="">Pilih</option>
                               <?php 
                               $sql2="SELECT * FROM jenisanggaran WHERE kd_jenisanggaran!='$data3[kd_jenisanggaran]' ORDER BY jenisanggaran";
@@ -135,16 +141,23 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                           </div>
                         </div>
                         <div class="form-group">
+                          <label class="col-sm-3 control-label">Status</label>
+                          <div class="col-sm-6">
+                            <input type="radio" name="status" id="status1" value="Y"> Ya<br>
+                            <input type="radio" name="status" id="status2" value="Y"> Tidak
+                          </div>
+                        </div>
+                        <div class="form-group">
                           <label class="col-sm-3 control-label">Keterangan</label>
                           <div class="col-sm-6">
-                            <input class="form-control" id="username" type="text" name="username">
+                            <textarea class="form-control" id="keterangan" name="keterangan"></textarea>
                           </div>
                         </div>
                         
                         <div class="form-group">
               <label class="col-sm-3  control-label">Jumlah</label>
               <div class="col-sm-6">
-                <input class="form-control" id="kredit1" type="number" name="kredit1">
+                <input class="form-control" id="jumlahanggaran" type="number" name="jumlahanggaran">
               </div>
             </div>
           </div>
@@ -160,25 +173,19 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
 
                       <?php
                       if (isset($_POST["submit"])){
-                        $jenisanggaran=$_POST['kd_jenisanggaran'];
+                        $kd_anggaranperusahaan=$_POST['kd_anggaranperusahaan'];
+                        $kd_jenisanggaran=$_POST['kd_jenisanggaran'];
                         $jumlahanggaran=$_POST['jumlahanggaran'];
-                        $sql8="SELECT * FROM pengguna WHERE username='$username'";
-                        $res8=mysqli_query($link,$sql8);
-                        $rows=mysqli_num_rows($res8);
-                        if($rows==0){
-                          $sql4="SELECT MAX(CONVERT(SUBSTR(id_pengguna,4,2), SIGNED)) AS nilai FROM pengguna";
-                          $res4=mysqli_query($link,$sql4);
-                          $data4=mysqli_fetch_array($res4);
-                          $idpeng="usr0".($data4['nilai']+1);
-                          $sql7="INSERT INTO pengguna VALUES ('$idpeng','$username','$password','$email','$level','$pegawai')";
-                          $res7=mysqli_query($link,$sql7);
-                          if($res7){
-                            echo "<script>alert('Data Berhasil Ditambahkan');
-                                document.location.href='pengguna';</script>";
-                          }
-                        }else if($rows>=1){
-                          echo "<script>alert('Username Telah Digunakan');</script>";
+                        $keterangan=$_POST['keterangan'];
+                        $status=$_POST['status'];
+                        $tanggal = date('Y-m-d');
+                        $tahun = date('Y');
 
+                        $sql = "INSERT INTO anggaranperusahaan VALUES('$kd_anggaranperusahaan', '$kd_jenisanggaran', '$tanggal', '$tahun', '$status', '$jumlahanggaran', '$keterangan')";
+                        echo $sql;
+                        $res = mysqli_query($link, $sql);
+                        if (! $res) {
+                          echo "<script>alert('".mysqli_error($link)."')</script>";
                         }
                       }
                       ?>
