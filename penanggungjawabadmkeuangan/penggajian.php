@@ -132,7 +132,11 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                 $res7=mysqli_query($link,$sql7);
                 $data7=mysqli_fetch_array($res7);
 
-                $kode="TD".($data7['kode']+1);
+                $sql8="SELECT CONVERT(SUBSTR(kd_kasbesar,3,9), SIGNED) AS kode FROM kasbesar ORDER BY kd_kasbesar DESC LIMIT 1";
+                $res8=mysqli_query($link,$sql8);
+                $data8=mysqli_fetch_array($res8);
+
+                $kode="TD".($data8['kode']+1);
                 $saldo=$data7['saldo']-$gaji;
                 $keterangan1="Gaji ".$data4['nama'];
                 $tanggal=$my_date->format('Y-m-d 00:00:00');
@@ -158,7 +162,11 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                 $res7=mysqli_query($link,$sql7);
                 $data7=mysqli_fetch_array($res7);
 
-                $kode="TD".($data7['kode']+1);
+                $sql8="SELECT CONVERT(SUBSTR(kd_kasbesar,3,9), SIGNED) AS kode FROM kasbesar ORDER BY kd_kasbesar DESC LIMIT 1";
+                $res8=mysqli_query($link,$sql8);
+                $data8=mysqli_fetch_array($res8);
+
+                $kode="TD".($data8['kode']+1);
                 $saldo=$data7['saldo']-$gaji;
                 $keterangan1="Gaji ".$data4['nama'];
                 $tanggal=$my_date->format('Y-m-d 00:00:00');
@@ -183,7 +191,11 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                 $res7=mysqli_query($link,$sql7);
                 $data7=mysqli_fetch_array($res7);
 
-                $kode="TD".($data7['kode']+1);
+                $sql8="SELECT CONVERT(SUBSTR(kd_kasbesar,3,9), SIGNED) AS kode FROM kasbesar ORDER BY kd_kasbesar DESC LIMIT 1";
+                $res8=mysqli_query($link,$sql8);
+                $data8=mysqli_fetch_array($res8);
+
+                $kode="TD".($data8['kode']+1);
                 $saldo=$data7['saldo']-$gaji;
                 $keterangan1="Gaji ".$data4['nama'];
                 $tanggal=$my_date->format('Y-m-d 00:00:00');
@@ -207,7 +219,11 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                 $res7=mysqli_query($link,$sql7);
                 $data7=mysqli_fetch_array($res7);
 
-                $kode="TD".($data7['kode']+1);
+                $sql8="SELECT CONVERT(SUBSTR(kd_kasbesar,3,9), SIGNED) AS kode FROM kasbesar ORDER BY kd_kasbesar DESC LIMIT 1";
+                $res8=mysqli_query($link,$sql8);
+                $data8=mysqli_fetch_array($res8);
+
+                $kode="TD".($data8['kode']+1);
                 $saldo=$data7['saldo']-$gaji;
                 $keterangan1="Gaji ".$data4['nama'];
                 $tanggal=$my_date->format('Y-m-d 00:00:00');
@@ -231,7 +247,11 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                 $res7=mysqli_query($link,$sql7);
                 $data7=mysqli_fetch_array($res7);
 
-                $kode="TD".($data7['kode']+1);
+                $sql8="SELECT CONVERT(SUBSTR(kd_kasbesar,3,9), SIGNED) AS kode FROM kasbesar ORDER BY kd_kasbesar DESC LIMIT 1";
+                $res8=mysqli_query($link,$sql8);
+                $data8=mysqli_fetch_array($res8);
+
+                $kode="TD".($data8['kode']+1);
                 $saldo=$data7['saldo']-$gaji;
                 $keterangan1="Gaji ".$data4['nama'];
                 $tanggal=$my_date->format('Y-m-d 00:00:00');
@@ -254,7 +274,11 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                 $res7=mysqli_query($link,$sql7);
                 $data7=mysqli_fetch_array($res7);
 
-                $kode="TD".($data7['kode']+1);
+                $sql8="SELECT CONVERT(SUBSTR(kd_kasbesar,3,9), SIGNED) AS kode FROM kasbesar ORDER BY kd_kasbesar DESC LIMIT 1";
+                $res8=mysqli_query($link,$sql8);
+                $data8=mysqli_fetch_array($res8);
+
+                $kode="TD".($data8['kode']+1);
                 $saldo=$data7['saldo']-$gaji;
                 $keterangan1="Gaji ".$data4['nama'];
                 $tanggal=$my_date->format('Y-m-d 00:00:00');
@@ -276,7 +300,11 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                 $res7=mysqli_query($link,$sql7);
                 $data7=mysqli_fetch_array($res7);
 
-                $kode="TD".($data7['kode']+1);
+                $sql8="SELECT CONVERT(SUBSTR(kd_kasbesar,3,9), SIGNED) AS kode FROM kasbesar ORDER BY kd_kasbesar DESC LIMIT 1";
+                $res8=mysqli_query($link,$sql8);
+                $data8=mysqli_fetch_array($res8);
+
+                $kode="TD".($data8['kode']+1);
                 $saldo=$data7['saldo']-$gaji;
                 $keterangan1="Gaji ".$data4['nama'];
                 $tanggal=$my_date->format('Y-m-d 00:00:00');
