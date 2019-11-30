@@ -43,8 +43,8 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
         </div>
         <br>
         <form class="form-horizontal style-form" role="form" method="post" action="" onsubmit="return validate();">
-          <label class="col-sm-2 col-sm-2 control-label">Masukan Waktu</label>
-				
+          
+                  <label class="col-sm-2 col-sm-2 control-label">Masukan Waktu</label>
                   <input class="form-control" id="tanggal1" placeholder="YY/MM/DD" type="text" name="tanggal1" />
                     
 		  <table class="table table-hover">
