@@ -60,7 +60,7 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                  
                   <div class="glocy-chart">
         <div class="chit-chat-heading">
-          Monitoring Trnsaksi Tahun <?php  echo $tahun."<br>";?>
+           <?php  $tahun."<br>";?>
         </div>
 				<br>
 						<div id="graph9">

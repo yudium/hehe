@@ -43,13 +43,17 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
         </div>
         <br>
         <form class="form-horizontal style-form" role="form" method="post" action="" onsubmit="return validate();">
-          <table class="table table-hover">
+          <label class="col-sm-2 col-sm-2 control-label">Masukan Waktu</label>
+				
+                  <input class="form-control" id="tanggal1" placeholder="YY/MM/DD" type="text" name="tanggal1" />
+                    
+		  <table class="table table-hover">
                 <thead>
                   <tr>
                     <th style="width:20px;"><center>No</center></th>
                     <th><center>Nama</center></th>
                     <th><center>Gaji</center></th>
-                    
+    
                     <th><center>Potongan Cuti</center></th>
                   </tr>
                 </thead>
@@ -98,9 +102,9 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
             $o=1;
             while($data4=mysqli_fetch_array($res4)){
               if($data4['id_pegawai']=='pp1'){
-                $tunjanganpp1=$_POST['tunjanganpp1'];
+                $tanggal = $_POST['tanggal'];
                 $potonganpp1=$_POST['potonganpp1'];
-                $gaji=$data4['gaji']+$tunjanganpp1-$potonganpp1;
+                $gaji=$data4['gaji']-$potonganpp1;
                 $sql7="SELECT *, CONVERT(SUBSTR(kd_kasbesar,3,9), SIGNED) AS kode FROM kasbesar WHERE tanggal IN (SELECT MAX(tanggal) FROM kasbesar) ORDER BY kd_kasbesar DESC LIMIT 1";
                 $res7=mysqli_query($link,$sql7);
                 $data7=mysqli_fetch_array($res7);
@@ -109,6 +113,7 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                 $saldo=$data7['saldo']-$gaji;
                 $keterangan1="Gaji ".$data4['nama'];
                 $tanggal=date("Y-m-d H:i:s");
+				
                 $tgl=date("Y-m-d");
 
                 $sqll="INSERT INTO kasbesar VALUES ('$kode','$tanggal','$keterangan1','0','$gaji','$saldo','RK02','PDP00000')";
@@ -232,7 +237,7 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                 $tanggal=date("Y-m-d H:i:s");
                 $tgl=date("Y-m-d");
 
-                $sqll="INSERT INTO kasbesar VALUES ('$kode','$tanggal','$keterangan1','0','$gaji','$saldo','RK02','PDP00000')";
+                $sqll="INSERT INTO kasbesar VALUES ('$kode','$tanggal1','$keterangan1','0','$gaji','$saldo','RK02','PDP00000')";
                 $ress=mysqli_query($link,$sqll);
 
                 

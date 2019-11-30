@@ -121,7 +121,7 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                         <div class="form-group">
                           <label class="col-sm-3  control-label">Kode Anggaran Perusahaan</label>
                           <div class="col-sm-6">
-                            <input class="form-control" id="kd_anggaranperusahaan" type="text" name="kd_anggaranperusahaan" value="<?php echo 'PSA'.date('Y') ?>" readonly>
+                            <input class="form-control" id="kd_anggaranperusahaan" type="text" name="kd_anggaranperusahaan" value="<?php echo 'PSA' ?>" readonly>
                           </div>
                         </div>
                         <div class="form-group">

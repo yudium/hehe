@@ -1,7 +1,7 @@
 <?php
 session_start();
 ob_start();
-date_default_timezone_set('Asia/Jakarta');
+ date_default_timezone_set('Asia/Jakarta');
 include("libfunc.php");
 include("../libfunc.php");
 $link=koneksidb();
@@ -145,7 +145,7 @@ if(($_SESSION['logske']==true) && ($_SESSION['userske']!="")){
     <div class="table-agile-info">
       <div class="panel panel-default">
         <div class="chit-chat-heading">
-          Penambahan Biaya Anggaran
+          Penambahan Transaksi
         </div>   
         <br>
         <br>
@@ -170,6 +170,12 @@ if(($_SESSION['logske']==true) && ($_SESSION['userske']!="")){
                 <input class="form-control" id="keterangan1" type="text" name="keterangan1">
               </div>
             </div>
+			<div class="form-group">
+                 <label class="col-sm-2 col-sm-2 control-label">Tanggal</label>
+				 <div class="col-sm-10">
+                  <input class="form-control" id="tanggal1" placeholder="YY/MM/DD" type="text" name="tanggal1" />
+                    </div>
+					</div>
             <div class="form-group">
               <label class="col-sm-2 col-sm-2 control-label">Jumlah</label>
               <div class="col-sm-10">
@@ -185,8 +191,7 @@ if(($_SESSION['logske']==true) && ($_SESSION['userske']!="")){
                     <th style="width:20px;"><center>No</center></th>
                     <th><center>Nama</center></th>
                     <th><center>Gaji</center></th>
-                    <th><center>Bonus</center></th>
-                    <th><center>Kasbon</center></th>
+                    <th><center>Potongan</center></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -200,7 +205,6 @@ if(($_SESSION['logske']==true) && ($_SESSION['userske']!="")){
                       <td><center><?php echo $i;?></center></td>
                       <td><center><?php echo strtoupper($data1['nama']);?></center></td>
                       <td><center><?php echo "Rp ".strtoupper(number_format($data1['gaji']))?></center></td>
-                      <td><center><input class="form-control" id="bonus[]" type="number" name="bonus[]"></center></td>
                       <td><center><input class="form-control" id="kasbon[]" type="number" name="kasbon[]"></center></td>
                     </tr>
                     <?php
@@ -369,9 +373,10 @@ if(($_SESSION['logske']==true) && ($_SESSION['userske']!="")){
         <?php 
         if (isset($_POST["submit"])){
           $jenis=$_POST['metode'];
-          $tanggal=date("Y-m-d H:i:s");
+          $tanggal1=date("Y-m-d ");
           if($jenis=='RK01'){
             $keterangan1=$_POST['keterangan1'];
+			$tanggal1=$_POST ['tanggal1'];
             $kredit1=$_POST['kredit1'];
             $sql="SELECT *, CONVERT(SUBSTR(kd_kasbesar,3,9), SIGNED) AS kode FROM kasbesar WHERE tanggal IN (SELECT MAX(tanggal) FROM kasbesar) ORDER BY kd_kasbesar DESC LIMIT 1";
             $res=mysqli_query($link,$sql);
@@ -380,7 +385,7 @@ if(($_SESSION['logske']==true) && ($_SESSION['userske']!="")){
             $kode="TD".($data['kode']+1);
             $saldo=$data['saldo']-$kredit1;
 
-            $sqll="INSERT INTO kasbesar VALUES ('$kode','$tanggal','$keterangan1','0','$kredit1','$saldo','$jenis','PDP00000')";
+            $sqll="INSERT INTO kasbesar VALUES ('$kode','$tanggal1','$keterangan1','0','$kredit1','$saldo','$jenis','PDP00000')";
             $ress=mysqli_query($link,$sqll);
 
             // $sqlll="INSERT INTO kaskecil VALUES ('$kode','$tanggal','$kredit1','$saldo')";

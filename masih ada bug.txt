@@ -1,5 +1,5 @@
 bug program cv putra rasmana
 
-1. folder direktur : konfirmasi anggaran , ubah anggaran , laporan gaji
+1. folder direktur : konfirmasi anggaran , laporan gaji
 2. folder penanggung jawab :  laporan gaji , pendapatan tanggalnya harus dinamis , transaksi tanggal harus dinamis , laporan gaji
 3. folder pelaksana : transaksi tanggal harus dinamis
