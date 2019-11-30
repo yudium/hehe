@@ -14,7 +14,7 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
   headmanke();
   $tahun=date('Y');
   $bulan='"X"';
-  if (isset($_POST['generate_btn'])) {
+  if (isset($_POST['generate_btn']) || isset($_POST['submit'])) {
     if (! $my_date = DateTime::createFromFormat('y/m/d', $_POST['tanggal1'])) {
       // var_dump( DateTime::getLastErrors() );
     } 
@@ -104,7 +104,7 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                 </table>
                 <hr> 
                 <?php 
-                  $tglcek=date('Y-m');
+                  $tglcek=$my_date->format('Y-m-d');
                   $sqll4="SELECT * FROM kasbesar WHERE kd_jenisanggaran='RK02' AND tanggal LIKE '%$tglcek%'";
                   $ress4=mysqli_query($link,$sqll4);
                   if(mysqli_num_rows($ress4)==0){
@@ -135,9 +135,9 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                 $kode="TD".($data7['kode']+1);
                 $saldo=$data7['saldo']-$gaji;
                 $keterangan1="Gaji ".$data4['nama'];
-                $tanggal=date("Y-m-d H:i:s");
+                $tanggal=$my_date->format('Y-m-d 00:00:00');
 				
-                $tgl=date("Y-m-d");
+                $tgl=$tanggal;
 
                 $sqll="INSERT INTO kasbesar VALUES ('$kode','$tanggal','$keterangan1','0','$gaji','$saldo','RK02','PDP00000')";
                 $ress=mysqli_query($link,$sqll);
@@ -161,8 +161,8 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                 $kode="TD".($data7['kode']+1);
                 $saldo=$data7['saldo']-$gaji;
                 $keterangan1="Gaji ".$data4['nama'];
-                $tanggal=date("Y-m-d H:i:s");
-                $tgl=date("Y-m-d");
+                $tanggal=$my_date->format('Y-m-d 00:00:00');
+                $tgl=$my_date->format('Y-m-d');
 
                 $sqll="INSERT INTO kasbesar VALUES ('$kode','$tanggal','$keterangan1','0','$gaji','$saldo','RK02','PDP00000')";
                 $ress=mysqli_query($link,$sqll);
@@ -186,8 +186,8 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                 $kode="TD".($data7['kode']+1);
                 $saldo=$data7['saldo']-$gaji;
                 $keterangan1="Gaji ".$data4['nama'];
-                $tanggal=date("Y-m-d H:i:s");
-                $tgl=date("Y-m-d");
+                $tanggal=$my_date->format('Y-m-d 00:00:00');
+                $tgl=$my_date->format('Y-m-d');
 
                 $sqll="INSERT INTO kasbesar VALUES ('$kode','$tanggal','$keterangan1','0','$gaji','$saldo','RK02','PDP00000')";
                 $ress=mysqli_query($link,$sqll);
@@ -210,8 +210,8 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                 $kode="TD".($data7['kode']+1);
                 $saldo=$data7['saldo']-$gaji;
                 $keterangan1="Gaji ".$data4['nama'];
-                $tanggal=date("Y-m-d H:i:s");
-                $tgl=date("Y-m-d");
+                $tanggal=$my_date->format('Y-m-d 00:00:00');
+                $tgl=$my_date->format('Y-m-d');
 
                 $sqll="INSERT INTO kasbesar VALUES ('$kode','$tanggal','$keterangan1','0','$gaji','$saldo','RK02','PDP00000')";
                 $ress=mysqli_query($link,$sqll);
@@ -234,8 +234,8 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                 $kode="TD".($data7['kode']+1);
                 $saldo=$data7['saldo']-$gaji;
                 $keterangan1="Gaji ".$data4['nama'];
-                $tanggal=date("Y-m-d H:i:s");
-                $tgl=date("Y-m-d");
+                $tanggal=$my_date->format('Y-m-d 00:00:00');
+                $tgl=$my_date->format('Y-m-d');
 
                 $sqll="INSERT INTO kasbesar VALUES ('$kode','$tanggal','$keterangan1','0','$gaji','$saldo','RK02','PDP00000')";
                 $ress=mysqli_query($link,$sqll);
@@ -257,10 +257,10 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                 $kode="TD".($data7['kode']+1);
                 $saldo=$data7['saldo']-$gaji;
                 $keterangan1="Gaji ".$data4['nama'];
-                $tanggal=date("Y-m-d H:i:s");
-                $tgl=date("Y-m-d");
+                $tanggal=$my_date->format('Y-m-d 00:00:00');
+                $tgl=$my_date->format('Y-m-d');
 
-                $sqll="INSERT INTO kasbesar VALUES ('$kode','$tanggal1','$keterangan1','0','$gaji','$saldo','RK02','PDP00000')";
+                $sqll="INSERT INTO kasbesar VALUES ('$kode','$tanggal','$keterangan1','0','$gaji','$saldo','RK02','PDP00000')";
                 $ress=mysqli_query($link,$sqll);
 
                 
@@ -279,8 +279,8 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                 $kode="TD".($data7['kode']+1);
                 $saldo=$data7['saldo']-$gaji;
                 $keterangan1="Gaji ".$data4['nama'];
-                $tanggal=date("Y-m-d H:i:s");
-                $tgl=date("Y-m-d");
+                $tanggal=$my_date->format('Y-m-d 00:00:00');
+                $tgl=$my_date->format('Y-m-d');
 
                 $sqll="INSERT INTO kasbesar VALUES ('$kode','$tanggal','$keterangan1','0','$gaji','$saldo','RK02','PDP00000')";
                 $ress=mysqli_query($link,$sqll);
