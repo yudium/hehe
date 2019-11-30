@@ -13,7 +13,14 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
   $data3=mysqli_fetch_array($res3);
   headmanke();
   $tahun=date('Y');
-  $bulan=date('F');
+  $bulan='"X"';
+  if (isset($_POST['generate_btn'])) {
+    echo $_POST['tanggal1'];
+    if (! $my_date = DateTime::createFromFormat('y/m/d', $_POST['tanggal1'])) {
+      // var_dump( DateTime::getLastErrors() );
+    } 
+    $bulan="<mark>".$my_date->format('F')."</mark>";
+  }
   // $mb=15000000;
   ?>
   <script type="text/javascript">
@@ -44,8 +51,23 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
         <br>
         <form class="form-horizontal style-form" role="form" method="post" action="" onsubmit="return validate();">
           
-                  <label class="col-sm-2 col-sm-2 control-label">Masukan Waktu</label>
-                  <input class="form-control" id="tanggal1" placeholder="YY/MM/DD" type="text" name="tanggal1" />
+                <hr>
+                <div class="form-group">
+                  <div class="col-sm-2" style="margin:0!important;padding:0!important;text-align:right">
+                    <label class="control-label">Masukan Waktu</label>
+                  </div>
+                  <div class="col-sm-10">
+                    <input class="form-control" id="tanggal1" placeholder="YY/MM/DD" type="text" name="tanggal1" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-2">
+                  </div>
+                  <div class="col-sm-10">
+                    <input type="submit" name="generate_btn" value="Lakukan penggajian" />
+                  </div>
+                </div>
+                <hr>
                     
 		  <table class="table table-hover">
                 <thead>
