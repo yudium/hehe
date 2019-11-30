@@ -57,7 +57,7 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                     <label class="control-label">Masukan Waktu</label>
                   </div>
                   <div class="col-sm-10">
-                    <input class="form-control" id="tanggal1" placeholder="YY/MM/DD" type="text" name="tanggal1" />
+                    <input class="form-control" id="tanggal1" placeholder="YY/MM/DD" type="text" name="tanggal1" value="<?php echo isset($_POST['tanggal1']) ? $_POST['tanggal1'] : '' ?>" />
                   </div>
                 </div>
                 <div class="form-group">
