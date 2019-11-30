@@ -69,6 +69,7 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                 </div>
                 <hr>
                     
+      <?php if (isset($_POST['generate_btn'])): ?>
 		  <table class="table table-hover">
                 <thead>
                   <tr>
@@ -113,6 +114,7 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
                     echo "";
                   }
                  ?>
+        <?php endif ?>
         </form>
         <p style="display:none" id="error_para"></p>
         <br>
