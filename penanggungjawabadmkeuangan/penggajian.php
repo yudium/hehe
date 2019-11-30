@@ -324,7 +324,7 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
               }
             }
             echo "<script>alert('Data Berhasil Ditambahkan');
-                  document.location.href='penggajian';</script>";
+                  document.location.href='penggajian.php';</script>";
           }
         ?>
         </div>
