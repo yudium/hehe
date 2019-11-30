@@ -15,7 +15,6 @@ if(($_SESSION['logmanke']==true) && ($_SESSION['usermanke']!="")){
   $tahun=date('Y');
   $bulan='"X"';
   if (isset($_POST['generate_btn'])) {
-    echo $_POST['tanggal1'];
     if (! $my_date = DateTime::createFromFormat('y/m/d', $_POST['tanggal1'])) {
       // var_dump( DateTime::getLastErrors() );
     } 
